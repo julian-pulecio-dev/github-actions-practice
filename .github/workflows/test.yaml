@@ -1,0 +1,14 @@
+name: test
+on: push
+jobs:
+  test:
+   - name: testing
+     uses: actions/checkout@v3
+   - name: install NodeJs
+     uses: actions/setup-node@v3
+     with:
+      node-version: 18
+   - name: install dependecies
+     run: npm ci
+   - name: run tests
+     run: npm test
